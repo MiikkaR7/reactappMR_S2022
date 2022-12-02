@@ -1,10 +1,17 @@
 import React from 'react';
 
-const Weather = () => {
+const Weather = (props) => {
+
+
+
     return (
-        <li>
-            <p>hei</p>
-        </li>
+        <ul className = "weatherlist">
+            <p>{props.cityname}</p>
+            <p>{props.description}</p>
+            <p>{props.temperature}</p>
+            <p>{props.humidity}</p>
+            <p>{props.windspeed}</p>
+        </ul>
     );
 };
 

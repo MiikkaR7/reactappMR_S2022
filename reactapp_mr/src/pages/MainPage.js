@@ -1,10 +1,10 @@
-
+import { useEffect, useState } from "react";
 
 const MainPage = () => {
 
 return (
     <div>
-        <h2>Main page</h2>
+        <h2>About</h2>
     </div>
     );
 };
