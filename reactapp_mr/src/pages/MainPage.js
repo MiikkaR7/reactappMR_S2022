@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Maps from "../components/Maps";
 
 const MainPage = () => {
 
