@@ -1,6 +1,7 @@
 import Weather from "../components/Weather";
 import { useEffect, useState } from "react";
 import Maps from "../components/Maps";
+import "./weatherpage.css";
 
 const WeatherPage = () => {
 
@@ -24,8 +25,6 @@ const WeatherPage = () => {
         newUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + event.target.elements.kaupunki.value + "&units=metric&appid=ca44062fdced26e6c6655bb10a60eb4d";
         setLoading(true);
 
-        try {
-
         const response = await fetch(newUrl)
 
         if (!response.ok) {
@@ -48,14 +47,12 @@ const WeatherPage = () => {
 
             updateWeatherData(weather);
         
-            } catch (error) {
-        setError(error.message);
-            }
+        
             
         setLoading(false);
 
-        const response = await fetch("https://maps.googleapis.com/maps/api/geocode/json?address=" + event.target.elements.kaupunki.value + "&key=AIzaSyBCUhs-v3A8SFr3ulm14jKpkdaVj8Is20E")
-        const locationData = await response.json();
+        const response2 = await fetch("https://maps.googleapis.com/maps/api/geocode/json?address=" + event.target.elements.kaupunki.value + "&key=AIzaSyBCUhs-v3A8SFr3ulm14jKpkdaVj8Is20E")
+        const locationData = await response2.json();
         
         location.lat = locationData.results[0].geometry.location.lat; 
         location.lng = locationData.results[0].geometry.location.lng;
@@ -112,9 +109,9 @@ const WeatherPage = () => {
 
     let content
     if (isLoading == true) {
-        content = <p>Loading...</p>
+        content = <p className="notweather">Loading...</p>
     } else if (error) {
-        content = <p>{error}</p>
+        content = <p className="notweather">{error}</p>
     } else {
         content = <Weather
             cityname = {weather.cityname}
@@ -127,13 +124,15 @@ const WeatherPage = () => {
 
     return (
         <div>
-            <form onSubmit = {changeCity}>
+            <form onSubmit = {changeCity} className="changecity">
                 <label for="kaupunki">Enter city name:</label><br/>
                 <input type="text" id="kaupunki"/>
-                <button type="submit">Submit</button>
+                <button className="changebutton" type="submit">Submit</button>
             </form>
             <section>{content}</section>
-            <button onClick={fetchWeatherData}>Update weather data</button>
+            <section className="update">
+                <button className="updatebutton" onClick={fetchWeatherData}>Update weather data</button>
+            </section>
             <section>
             <Maps coords={useLoc}/>
             </section>   

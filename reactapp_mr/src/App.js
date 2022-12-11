@@ -1,6 +1,5 @@
-import './App.css';
 import { Route, Switch } from "react-router-dom/cjs/react-router-dom";
-import MainPage from './pages/MainPage';
+import AboutPage from './pages/AboutPage';
 import WeatherPage from './pages/WeatherPage';
 import Navigation from './components/Navigation';
 
@@ -10,10 +9,10 @@ function App() {
       <Navigation/>
         <Switch>
           <Route path="/" exact>
-            <MainPage/>
-          </Route>
-          <Route path="/weather" exact>
             <WeatherPage/>
+          </Route>
+          <Route path="/about" exact>
+            <AboutPage/>
           </Route>
         </Switch>
     </div>

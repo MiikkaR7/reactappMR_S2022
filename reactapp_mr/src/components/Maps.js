@@ -1,5 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import GoogleMapReact from 'google-map-react'
+import Keskipiste from './Keskipiste';
+import "./Maps.css";
+
 
   const Maps = (props) => {
 
@@ -12,13 +15,14 @@ import GoogleMapReact from 'google-map-react'
 
 
     return (
-      <div style={{ height: '50vh', width: '50%' }}>
+      <div className="map">
         <GoogleMapReact
           yesIWantToUseGoogleMapApiInternals={true}
           bootstrapURLKeys={{ key: "AIzaSyDCLrTImjQu7xnw9CzI4b3YSV-xWFJQGow" }}
           center={useLoc}
           defaultZoom={14}
         >
+        <Keskipiste pos={useLoc}/>
         </GoogleMapReact>
       </div>
     )

@@ -1,4 +1,5 @@
 import React from 'react';
+import './Maps.css';
 
 const Weather = (props) => {
 
@@ -7,10 +8,10 @@ const Weather = (props) => {
     return (
         <ul className = "weatherlist">
             <p>{props.cityname}</p>
-            <p>{props.description}</p>
-            <p>{props.temperature}</p>
-            <p>{props.humidity}</p>
-            <p>{props.windspeed}</p>
+            <p>Description: {props.description}</p>
+            <p>Temperature: {props.temperature} °C</p>
+            <p>Humidity: {props.humidity}%</p>
+            <p>Wind speed: {props.windspeed} m/s</p>
         </ul>
     );
 };

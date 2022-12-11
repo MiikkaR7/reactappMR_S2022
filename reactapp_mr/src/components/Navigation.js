@@ -5,14 +5,14 @@ import { Link } from 'react-router-dom';
 const Navigation = () => {
     return (
       <header className="header">
-        <h2>React app</h2>
+        <h2>React weather app</h2>
         <nav>
           <ul>
             <li>
-              <Link to="/">About</Link>
+              <Link to="/">Weather information</Link>
             </li>
             <li>
-              <Link to="/weather">Weather information</Link>
+              <Link to="/about">About</Link>
             </li>
           </ul>
         </nav>

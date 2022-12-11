@@ -1,0 +1,38 @@
+.changecity {
+    margin-left: 480px;
+}
+
+.updatebutton {
+    font-family: Sans-Serif;
+    font-size: 14px;
+    padding: 12px 32px;
+    background-color: #000000;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+}
+
+.changebutton {
+    font-family: Sans-Serif;
+    font-size: 14px;
+    padding: 4px 32px;
+    background-color: #000000;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+}
+
+.update {
+    margin-left: 480px;
+    margin-bottom: 20px;
+}
+
+.notweather {
+    margin-left: 480px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.about {
+    margin-left: 300px;
+}
